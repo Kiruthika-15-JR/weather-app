@@ -29,6 +29,8 @@ function Weeklyweather() {
   const [error,seterror]=useState(null);
 
 
+  const api_key=ProcessingInstruction.env.REACT_APP_weather_api_key;
+
   useEffect(() => {//to change bg image dynamically when the component did mount for this specific (weather.jsx) component happens...
     document.body.style.backgroundImage = "url('/images/image1.jpg')";
     document.body.style.backgroundSize = "cover";
@@ -56,7 +58,7 @@ console.log(city);
 
 const handleSubmit=async(event)=>{
     try{
-       const response = await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=8d14bde75d858d3959a8b822de5f911b&units=metric`);
+       const response = await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${api_key}&units=metric`);
          console.log(response.data);
          setdatalist(response.data);
          setloading(true);  
