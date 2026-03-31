@@ -29,7 +29,7 @@ function Weeklyweather() {
   const [error,seterror]=useState(null);
 
 
-  const api_key=ProcessingInstruction.env.REACT_APP_weather_api_key;
+  const api_key=process.env.REACT_APP_weather_api_key;
 
   useEffect(() => {//to change bg image dynamically when the component did mount for this specific (weather.jsx) component happens...
     document.body.style.backgroundImage = "url('/images/image1.jpg')";
